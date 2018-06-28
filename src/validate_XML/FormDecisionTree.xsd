@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ACTION">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="refid" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Condition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ACTION" minOccurs="0"/>
+        <xs:element ref="Condition" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="refid" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Decision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Condition"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecisionS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Decision" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecisionTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DecisionS"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="type"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

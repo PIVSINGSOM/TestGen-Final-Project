@@ -1,0 +1,49 @@
+Variable Name: Order Price
+Variable Type: Range
+Test Type: Input
+
+
+
+      <-115>             <236>           <1895>           <3954>           <6264>           <1000095>
+|▒▒▒▒▒▒▒▒▒||▒▒▒▒▒▒▒▒▒||█████████||█████████||█████████||▒▒▒▒▒▒▒▒▒|
+-∞              0                1000             2500             5000            999999             ∞
+
+✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶
+
+Variable Name: CustType
+Variable Type: Ordinal
+Test Type: Input
+id : 4 value : Silver
+id : 5 value : Gold
+|█████████||█████████||█████████|
+      Silver           Gold           None
+✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶✶
+
+Variable Name: Total Discount
+Variable Type: Ordinal
+Test Type: Output
+|█████████||█████████||█████████||█████████||█████████||█████████||█████████|
+         5              10              15              20              25              30              None
+
+Testcase	Order Price	CustType	Total Discount	Coverage
+1	1895	Silver	5	11%
+2	1895	Gold	10	22%
+3	3954	Silver	15	33%
+4	3954	Gold	20	44%
+5	6264	Silver	25	55%
+6	6264	Gold	30	66%
+[1895, 1895, 3954, 3954, 6264, 6264, -99, 909, 1000691]
+!!! This is not completed. !!!
+!!! If you want to complete, click the Export to Excel button. !!!
+Mainflow : [flow0, flow1, flow2, flow3, flow4, flow5]
+MF_description : [Buying, Use Card, Get card discount, Order Price more than 1000, Get order price discount, Get card and order discount]
+Exceptionflow : [E0]
+EF_description : [No card and Order price less than 1000]
+extREF : [E0]
+extRefOut : [flow1]
+Alternativeflow : [A0]
+AF_description : [No card]
+altREF : [A0]
+altRefIN : [flow3]
+altRefOut : [flow1]
+Excel file created.

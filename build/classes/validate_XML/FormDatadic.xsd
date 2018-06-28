@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Varname" type="xs:string"/>
+    <xs:element name="Type" type="xs:string"/>
+    <xs:element name="Dataset" type="xs:byte"/>
+    <xs:element name="Condition">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:byte" name="id" use="optional"/>
+                    <xs:attribute type="xs:short" name="min" use="optional"/>
+                    <xs:attribute type="xs:int" name="max" use="optional"/>
+                    <xs:attribute type="xs:string" name="value" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Action">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:byte" name="id" use="optional"/>
+                    <xs:attribute type="xs:string" name="value" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Input">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Varname"/>
+                <xs:element ref="Type"/>
+                <xs:element ref="Dataset"/>
+                <xs:element ref="Condition" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Output">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Varname"/>
+                <xs:element ref="Type"/>
+                <xs:element ref="Dataset"/>
+                <xs:element ref="Action" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Usecase">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Input" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Output"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id"/>
+            <xs:attribute type="xs:string" name="name"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UC">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Usecase"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usecase usecase_id="001">
+  <usecase_name>001</usecase_name>
+  <actor_goal>gggg</actor_goal>
+  <usecase_pre>ggggg</usecase_pre>
+  <usecase_post>gggg</usecase_post>
+  <usecase_priority>Very high</usecase_priority>
+
+  <flow_of_event>
+    <value flow_id="flow0">Buying</value>
+    <value flow_id="flow1">Use Card</value>
+    <value flow_id="flow2">Get card discount</value>
+    <value flow_id="flow3">Order Price more than 1000</value>
+    <value flow_id="flow4">Get order price discount</value>
+    <value flow_id="flow5">Get card and order discount</value>
+  </flow_of_event>
+
+  <alternative_flow>
+    <value alt_id="A0">No card</value>
+	<ref ref_id = "A0">
+	<flow-ref_out  at-step="flow1"/>
+	<flow-ref_in  at-step="flow3"/>
+	</ref>
+  </alternative_flow>
+
+  <exception_flow>
+    <value ext_id="E0">No card and Order price less than 1000</value>
+	<ref ref_id = "E0">
+	<flow-ref at-step="flow1"/>
+	</ref>
+    </exception_flow>
+
+</usecase>

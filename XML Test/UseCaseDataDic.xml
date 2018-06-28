@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UC>
+  <Usecase id="1" name="Get Discount">
+    <Input>
+      <Varname>Order Price</Varname>
+      <Type>Range</Type>
+      <Dataset>3</Dataset>
+      <Condition id="1" min="1000" max ="2499" />
+      <Condition id="2" min="2500" max ="4999" />
+      <Condition id="3" min="5000" max ="999999" />
+    </Input>
+    <Input>
+      <Varname>CustType</Varname>
+      <Type>Ordinal</Type>
+      <Dataset>2</Dataset>
+      <Condition id="4" value="Silver" />
+      <Condition id="5" value="Gold" />
+   </Input>
+  <Output>
+      <Varname>Total Discount</Varname>
+      <Type>Ordinal</Type>
+      <Dataset>6</Dataset>
+      <Action id="6" value="5" />
+      <Action id="7" value="10" />
+      <Action id="8" value="15" />
+      <Action id="9" value="20" />
+      <Action id="10" value="25" />
+      <Action id="11" value="30" />
+   </Output>   
+  </Usecase>
+</UC>

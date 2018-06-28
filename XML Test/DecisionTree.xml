@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionTree type="OrderDiscount">
+<DecisionS>
+   		<Decision id="1">
+   			<Condition refid="1">
+   				<Condition refid="4">
+                                                                            
+   					<ACTION refid="6" />
+                                    
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+   		<Decision id="2">
+   			<Condition refid="1">
+   				<Condition refid="5">
+   					<ACTION refid="7" />
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+   		<Decision id="3">
+   			<Condition refid="2">
+   				<Condition refid="4">
+   					<ACTION refid="8" />
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+   		<Decision id="4">
+   			<Condition refid="2">
+   				<Condition refid="5">
+   					<ACTION refid="9" />
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+ 
+   		<Decision id="5">
+   			<Condition refid="3">
+   				<Condition refid="4">
+   					<ACTION refid="10" />
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+   		<Decision id="6">
+   			<Condition refid="3">
+   				<Condition refid="5">
+   					<ACTION refid="11" />
+   				</Condition>
+   			</Condition>
+   		</Decision> 
+   </DecisionS>   
+  </DecisionTree>
