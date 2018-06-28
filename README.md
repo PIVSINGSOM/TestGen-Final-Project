@@ -13,8 +13,11 @@ COLLEGE OF COMPUTING
 Prince of Songkla University Phuket Campus 80 M.1 Vichitsongkram Road Kathu, Phuket 83120
 
  076-276-471
+ 
  076-276-453
+ 
  coc@phuket.psu.ac.th
+ 
  www.computing.psu.ac.th
 
 
